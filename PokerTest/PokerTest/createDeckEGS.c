@@ -1,5 +1,6 @@
 /*
-createDeck.c
+createDeckEGS.c
+Creates a deck of 52 cards (unshuffled).
 
 Author: Emily Sandness
 History:
@@ -10,7 +11,7 @@ History:
 
 /*
 TODO - fill this comment out
-Creates a deck of 52 cards (unshuffled).
+what does it do?
 Assumes ?
 how it changes parameters or heap memory
 */
@@ -21,8 +22,8 @@ void createDeckEGS(CARD deck[]) {
   for (i = 0; i < CARDS_IN_DECK; i++) {
 
     //create the face of the card (1-13)
-    deck[i].face = (i % CARDS_IN_SUIT);
+    deck[i].cardFace = (i % CARDS_IN_SUIT);
     //create the suit of the card (0-3)
-    deck[i].suit = i / CARDS_IN_SUIT;
+    deck[i].cardSuit = i / CARDS_IN_SUIT;
   }
 }

@@ -9,9 +9,19 @@ Version .01
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
+#include "wincurs.h"
 //#include "unixcurs.h"
-//#include "wincurs.h"
+
+#ifdef _WIN32
+#define PAUSE printf("\npress any key to continue..."); getchar()
+#define FLUSH {int c; while (( c = getchar()) != '\n' && c != EOF);}
+#define CLEAR system("cls")
+#else
+#define STR_IGNORECASE_CMP strcasecmp
+#define PAUSE printf("\npress any key to continue..."); getchar()
+#define FLUSH {int c; while (( c = getchar()) != '\n' && c != EOF);}
+#define CLEAR printf("\033c")
+#endif
 
 #define CARDS_IN_DECK 52
 #define CARDS_IN_SUIT 13
@@ -20,22 +30,22 @@ Version .01
 
 typedef struct card
 {
-  //Card struct
-  unsigned int face : 4; //face number 1-13 A-K
-  unsigned int suit : 2; //suit 0-3 Hearts Diamonds Spades Clubs
+	//Card struct
+	unsigned int cardFace : 4; //face number 1-13 A-K
+	unsigned int cardSuit : 2; //suit 0-3 Hearts Diamonds Spades Clubs
 } CARD;
 
 //cutting hand def. Use CARD variable[0-4] (an array of CARD stucts)
 
-typedef struct player
+typedef struct player 
 {
-  //player struct
-  char * playerName[NAME];
-  //updated to use an array of CARDS I think I implemented this right
-  CARD * playerHand[CARDS_IN_HAND];
-  int playerScore;
-  short handsPlayed;
-} PLAYER;
+	//player struct
+	char * playerName[NAME];
+	//updated to use an array of CARDS I think I implemented this right
+	CARD playerHand[CARDS_IN_HAND];
+	int playerScore;
+	short handsPlayed;
+}PLAYER;
 
 // faces on cards as constant array of strings
 // put an empty string in position 0 so index 
@@ -47,16 +57,4 @@ const char *face[] =
 
 // suit on cards, order is arbitrary
 const char *suit[] =
-{ "Hearts", "Diamonds", "Spades", "Clubs" };
-
-#ifdef _WIN32
-#define STR_IGNORECASE_CMP stricmp
-#define PAUSE printf("\npress any key to continue..."); getchar()
-#define FLUSH {int c; while (( c = getchar()) != '\n' && c != EOF);}
-#define CLEAR system("cls")
-#else
-#define STR_IGNORECASE_CMP strcasecmp
-#define PAUSE printf("\npress any key to continue..."); getchar()
-#define FLUSH {int c; while (( c = getchar()) != '\n' && c != EOF);}
-#define CLEAR printf("\033c")
-#endif
+{ "Hearts", "Diamonds", "Spades", "Clubs"};

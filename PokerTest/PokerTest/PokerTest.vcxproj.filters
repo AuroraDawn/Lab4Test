@@ -15,15 +15,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
+    <ClCompile Include="createDeckEGS.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="createDeckEGS.c">
+    <ClCompile Include="dealCardsEGS.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dontSyncThis.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shuffleDeckEGS.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testMain.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pokerHeader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wincurs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

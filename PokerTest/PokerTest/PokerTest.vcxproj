@@ -20,10 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="createDeckEGS.c" />
-    <ClCompile Include="main.c" />
+    <ClCompile Include="dealCardsEGS.c" />
+    <ClCompile Include="dontSyncThis.c" />
+    <ClCompile Include="shuffleDeckEGS.c" />
+    <ClCompile Include="testMain.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pokerHeader.h" />
+    <ClInclude Include="wincurs.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F30F7569-468F-4398-AAB1-BDA101156E1A}</ProjectGuid>

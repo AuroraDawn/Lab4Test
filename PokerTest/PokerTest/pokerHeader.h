@@ -58,3 +58,9 @@ const char *face[] =
 // suit on cards, order is arbitrary
 const char *suit[] =
 { "Hearts", "Diamonds", "Spades", "Clubs"};
+
+//remove
+void showDeck(CARD *);
+void createDeckEGS(CARD *);
+void shuffleDeckEGS(CARD *);
+void dealCardsEGS(const CARD * const[]);

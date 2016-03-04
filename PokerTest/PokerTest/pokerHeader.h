@@ -23,6 +23,9 @@ Version .01
 #define CLEAR printf("\033c")
 #endif
 
+
+
+
 #define CARDS_IN_DECK 52
 #define CARDS_IN_SUIT 13
 #define NAME 20

@@ -9,7 +9,7 @@ Version .01
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "wincurs.h"
+#include <time.h>
 //#include "unixcurs.h"
 
 #ifdef _WIN32
@@ -23,13 +23,24 @@ Version .01
 #define CLEAR printf("\033c")
 #endif
 
-
-
-
 #define CARDS_IN_DECK 52
 #define CARDS_IN_SUIT 13
 #define NAME 20
 #define CARDS_IN_HAND 4
+
+enum SCORE
+{
+	SCORE_LOSS = 0,
+	SCORE_JACKS = 1,
+	SCORE_TWO_PAIR = 2,
+	SCORE_THREE_OF_A_KIND = 3,
+	SCORE_STRAIGHT = 4,
+	SCORE_FLUSH = 5,
+	SCORE_FULL_HOUSE = 6,
+	SCORE_FOUR_OF_A_KIND = 7,
+	SCORE_STRAIGHT_FLUSH = 8,
+	SCORE_ROYAL_FLUSH = 9
+};
 
 typedef struct card
 {
@@ -40,7 +51,7 @@ typedef struct card
 
 //cutting hand def. Use CARD variable[0-4] (an array of CARD stucts)
 
-typedef struct player 
+typedef struct player
 {
 	//player struct
 	char * playerName[NAME];
@@ -50,20 +61,20 @@ typedef struct player
 	short handsPlayed;
 }PLAYER;
 
-// faces on cards as constant array of strings
-// put an empty string in position 0 so index 
-// is the # on the card
-const char *face[] =
-{ "", "Ace", "Two", "Three", "Four",
-"Five", "Six", "Seven", "Eight", "Nine",
-"Ten", "Jack", "Queen", "King" };
+int scoreHandJNH(CARD*);
+void sortHandJNH(CARD*);
+bool scoreJacksJNH(CARD*);
+bool scoreTwoPairJNH(CARD*);
+bool scoreThreeOfAKindJNH(CARD*);
+bool scoreStraightJNH(CARD*);
+bool scoreFlushJNH(CARD*);
+bool scoreFullHouseJNH(CARD*);
+bool scoreFourOfAKindJNH(CARD*);
+bool scoreStraighFlushJNH(CARD*);
+bool scoreRoyalFlushJNH(CARD*);
+short compareCardsJNH(CARD, CARD);
 
-// suit on cards, order is arbitrary
-const char *suit[] =
-{ "Hearts", "Diamonds", "Spades", "Clubs"};
+void createDeckEGS(CARD []);
+void shuffleDeckEGS(CARD []);
 
-//remove
-void showDeck(CARD *);
-void createDeckEGS(CARD *);
-void shuffleDeckEGS(CARD *);
-void dealCardsEGS(const CARD * const[]);
+void paintHandMER(CARD []);

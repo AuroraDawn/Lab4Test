@@ -16,12 +16,18 @@ int main(void) {
 	int score = 0;
 	CARD deck[53];
 	CARD hand[5];
+  createDeckEGS(deck);
+  
+  //printDeck(deck);
+ // for (short i = 0; i < 100; i++) {
+  //  printf("\n\n\n%d", i);
+    
+    shuffleDeckEGS(deck);
+    dealCardsEGS(deck, hand);
+    
+//  }
+ 
 
-	createDeckEGS(deck);
-  //printDeck(deck);
-	shuffleDeckEGS(deck);
-  //printDeck(deck);
-  dealCardsEGS(deck, hand);
 
 	/*for (i = 0; i <= CARDS_IN_HAND; i++) {
 		hand[i] = deck[i];

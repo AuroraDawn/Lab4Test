@@ -16,7 +16,7 @@ what does it do?
 Assumes ?
 how it changes parameters or heap memory
 */
-void createDeckEGS(CARD deck[]) {
+void createDeckEGS(CARD *deck) {
   short i;
 
   //create each card in order

@@ -18,9 +18,12 @@ int main(void) {
 	CARD hand[5];
 
 	createDeckEGS(deck);
+  //printDeck(deck);
 	shuffleDeckEGS(deck);
+  //printDeck(deck);
+  dealCardsEGS(deck, hand);
 
-	for (i = 0; i <= CARDS_IN_HAND; i++) {
+	/*for (i = 0; i <= CARDS_IN_HAND; i++) {
 		hand[i] = deck[i];
 	}
 	printf("Current hand:");
@@ -32,6 +35,13 @@ int main(void) {
 	printf("\n\n===============\n\n");
 
 	score = scoreHandJNH(hand);
-	printf("%s!  %d", scoreStrings[score], scoreNums[score]);
+	printf("%s!  %d", scoreStrings[score], scoreNums[score]);*/
 	PAUSE;
+}
+
+void printDeck(CARD *deck) {
+  short i;
+  for (i = 0; i < CARDS_IN_DECK; i++) {
+    printf("\n%s %s", suit[deck[i].cardSuit], face[deck[i].cardFace]);
+  }
 }

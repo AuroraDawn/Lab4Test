@@ -26,7 +26,7 @@ Version .01
 #define CARDS_IN_DECK 52
 #define CARDS_IN_SUIT 13
 #define NAME 20
-#define CARDS_IN_HAND 4
+#define CARDS_IN_HAND 5
 
 enum SCORE
 {
@@ -74,7 +74,9 @@ bool scoreStraighFlushJNH(CARD*);
 bool scoreRoyalFlushJNH(CARD*);
 short compareCardsJNH(CARD, CARD);
 
-void createDeckEGS(CARD []);
-void shuffleDeckEGS(CARD []);
+void createDeckEGS(CARD *);
+void shuffleDeckEGS(CARD *);
+void dealCardsEGS(CARD *, CARD *);
+void printDeck(CARD *);
 
 void paintHandMER(CARD []);
